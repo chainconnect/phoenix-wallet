@@ -9,7 +9,10 @@ const GlobalStyle = createGlobalStyle`
   body{
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background-color: #1a1a1d;
+    background: #c31432;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     color:#e2eaf2;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
