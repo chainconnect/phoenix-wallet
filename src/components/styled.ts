@@ -25,7 +25,13 @@ const NavBarWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const LogoWrapper = styled.div``;
+const LogoWrapper = styled.div`
+  max-width: 256px;
+  padding: 16px 0;
+  img {
+    max-width: 100%;
+  }
+`;
 const NetworkSelectWrapper = styled.div`
   position: relative;
 `;
