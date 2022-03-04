@@ -5,7 +5,9 @@ import { LogoWrapper, NavBarWrapper } from './styled';
 export default function NavBar() {
   return (
     <NavBarWrapper>
-      <LogoWrapper>LOGO</LogoWrapper>
+      <LogoWrapper>
+        <img src="/logo.svg" alt="logo" />
+      </LogoWrapper>
       <NetworkSelect />
     </NavBarWrapper>
   );
