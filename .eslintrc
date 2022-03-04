@@ -24,7 +24,9 @@
         "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
         "import/prefer-default-export": "off",
-        "object-curly-newline": "off"
+        "object-curly-newline": "off",
+        "no-unused-vars": "off",
+        "no-param-reassign": "off"
     },
     "settings": {
         "import/resolver": {

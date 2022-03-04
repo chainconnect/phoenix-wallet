@@ -35,12 +35,45 @@ const NetworkSelectButton = styled.button`
   -webkit-backdrop-filter: blur(7.3px);
   border: 0.7px solid rgba(255, 255, 255, 0.3);
   color: #fff;
-  padding: 8px 12px;
-  font-size: 16px;
+  padding: 8px 16px;
+  font-size: 18px;
   letter-spacing: 1px;
   border-radius: 6px;
   cursor: pointer;
   text-transform: capitalize;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const NetworkSelectDropdownWrapper = styled.div`
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 6px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 8px;
+  min-width: 180px;
+  text-transform: capitalize;
+  z-index: 9999;
+`;
+const NetworkSelectDropdownItem = styled.span`
+  padding: 8px 12px;
+  border-bottom: 1px solid #ccc;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer;
+  &:last-child {
+    border: none;
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
 `;
 
 export {
@@ -51,4 +84,6 @@ export {
   LogoWrapper,
   NetworkSelectWrapper,
   NetworkSelectButton,
+  NetworkSelectDropdownItem,
+  NetworkSelectDropdownWrapper,
 };
