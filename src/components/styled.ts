@@ -4,6 +4,8 @@ const AppWrapper = styled.div`
   min-height: 100vh;
   max-width: 80%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 `;
 const FlexCol = styled.div`
   height: 100%;
@@ -81,7 +83,30 @@ const NetworkSelectDropdownItem = styled.span`
     background-color: rgba(255, 255, 255, 0.3);
   }
 `;
+const GenericButton = styled.button`
+  background: hsla(0, 0%, 100%, 0.2);
+  backdrop-filter: blur(7.3px);
+  -webkit-backdrop-filter: blur(7.3px);
+  border: 2px solid hsla(0, 0%, 100%, 0.1);
+  color: #fff;
+  padding: 8px 16px;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 22px;
+  letter-spacing: 1px;
+  border-radius: 6px;
 
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 0.4);
+  }
+  &:disabled {
+    cursor: no-drop;
+    color: #ccc;
+    background-color: hsla(0, 0%, 0%, 0.1);
+  }
+`;
 export {
   AppWrapper,
   FlexCol,
@@ -92,4 +117,5 @@ export {
   NetworkSelectButton,
   NetworkSelectDropdownItem,
   NetworkSelectDropdownWrapper,
+  GenericButton,
 };

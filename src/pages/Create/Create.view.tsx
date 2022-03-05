@@ -1,14 +1,16 @@
 import React from 'react';
-import { HeroContainer } from '../../components/styled';
-import { GenerateContainer, HeroTitle } from './components/styled';
+import { useStepperContext } from '../../utils/StepperProvider';
+import { GenerateContainer } from './components/styled';
+import { createStepMapper } from './utils/componentMapper';
 
 export default function CreateView() {
+  const { activeStep } = useStepperContext();
+  const Component = createStepMapper[activeStep - 1];
   return (
     <>
-      <HeroContainer>
-        <HeroTitle>Create new wallet</HeroTitle>
-      </HeroContainer>
-      <GenerateContainer>test</GenerateContainer>
+      <GenerateContainer>
+        <Component />
+      </GenerateContainer>
     </>
   );
 }
