@@ -1,11 +1,14 @@
 import React from 'react';
-import { FlexCol as CreateContainer } from '../../components/styled';
+import StepperProvider from '../../utils/StepperProvider';
+import { CreateContainer } from './components/styled';
 import CreateView from './Create.view';
 
 export default function CreatePageContainer() {
   return (
     <CreateContainer>
-      <CreateView />
+      <StepperProvider>
+        <CreateView />
+      </StepperProvider>
     </CreateContainer>
   );
 }

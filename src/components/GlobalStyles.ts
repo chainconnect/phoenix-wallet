@@ -8,12 +8,13 @@ const GlobalStyle = createGlobalStyle`
   }
   body{
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #c31432; 
     background: -webkit-linear-gradient(to top, #240b36, #c31432);
     background: linear-gradient(to top, #240b36, #c31432); 
     color:#e2eaf2;
-    -webkit-font-smoothing: subpixel-antialiased;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
