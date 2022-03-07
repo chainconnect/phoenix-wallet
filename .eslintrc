@@ -30,7 +30,9 @@
         "react/jsx-props-no-spreading": "off",
         "no-useless-escape":"warn",
         "no-confusing-arrow":"warn",
-        "implicit-arrow-linebreak":"off"
+        "implicit-arrow-linebreak":"off",
+        "operator-linebreak":"warn",
+        "react/jsx-one-expression-per-line": "off"
     },
     "settings": {
         "import/resolver": {

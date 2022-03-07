@@ -1,16 +1,13 @@
 import React from 'react';
 import * as yup from 'yup';
 import { Formik, Field, FormikProps } from 'formik';
-import { VscError } from 'react-icons/vsc';
 import { useHistory } from 'react-router-dom';
-import {
-  FormError,
-  HeroTitle,
-  SetPasswordWrapper,
-  SetPwFinishBtn,
-  SetPwInputField,
-  StyledFormikForm,
-} from './styled';
+import { HeroTitle, SetPasswordWrapper, SetPwFinishBtn, SetPwInputField } from './styled';
+import FormError from '../../../components/FormError';
+import { StyledFormikForm } from '../../../components/styled';
+import { useCreateModuleStore } from '../utils/store';
+import { useGlobalStore, useVaultStore } from '../../../utils/store';
+import { getAccountAndPrivateKeyFromMnemonic } from '../../../utils/walletHelpers';
 
 interface IFormikSetPassword {
   password: string;
@@ -26,8 +23,15 @@ const PasswordValidationSchema = yup.object().shape({
 });
 export default function SetPassword() {
   const history = useHistory();
+  const mnemonic = useCreateModuleStore((state) => state.appState.mnemonic);
+  const setAccount = useGlobalStore((state) => state.actions.setAccount);
+  const setKeyToVault = useVaultStore((state) => state.setKey);
+
   const handleSubmit = (value: IFormikSetPassword) => {
-    history.push('/');
+    const { newAccount, privateBase58 } = getAccountAndPrivateKeyFromMnemonic(mnemonic);
+    setAccount(newAccount);
+    setKeyToVault(privateBase58);
+    history.push('/dashboard');
   };
   return (
     <SetPasswordWrapper>
@@ -39,12 +43,7 @@ export default function SetPassword() {
       >
         {(props: FormikProps<any>) => (
           <>
-            {props.errors.password && (
-              <FormError>
-                <VscError />
-                {props.errors.password}
-              </FormError>
-            )}
+            {props.errors.password && <FormError text={props.errors.password as string} />}
             <StyledFormikForm>
               <Field name="password">
                 {({ field, form: { touched, errors }, meta }: any) => (

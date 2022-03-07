@@ -97,21 +97,3 @@ export const SetPwFinishBtn = styled(GenerateButton)`
   height: 48px;
   width: 128px;
 `;
-export const StyledFormikForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-export const FormError = styled.span`
-  margin-top: 24px;
-  color: whitesmoke;
-  background-color: hsla(348, 80%, 38%, 0.4);
-  border: 2px solid hsla(0, 0%, 100%, 0.1);
-  padding: 6px 12px;
-  display: flex;
-  align-items: center;
-  svg {
-    margin-right: 8px;
-  }
-  /* border-radius: 8px; */
-`;
