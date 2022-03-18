@@ -1,3 +1,4 @@
+import { Form } from 'formik';
 import styled from 'styled-components';
 
 const AppWrapper = styled.div`
@@ -107,6 +108,44 @@ const GenericButton = styled.button`
     background-color: hsla(0, 0%, 0%, 0.1);
   }
 `;
+const HeroTitle = styled.h2`
+  font-weight: 400;
+  font-size: 2rem;
+  text-transform: capitalize;
+`;
+const FormError = styled.span`
+  margin-top: 24px;
+  color: whitesmoke;
+  background-color: hsla(348, 80%, 38%, 0.4);
+  border: 2px solid hsla(0, 0%, 100%, 0.1);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  svg {
+    margin-right: 8px;
+  }
+  /* border-radius: 8px; */
+`;
+const StyledFormikForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const RightNavWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const UserWalletAddress = styled.span`
+  margin-right: 24px;
+  margin-left: 8px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  > span {
+    color: #ffce57;
+    font-weight: 600;
+    cursor: pointer;
+  }
+`;
 export {
   AppWrapper,
   FlexCol,
@@ -118,4 +157,9 @@ export {
   NetworkSelectDropdownItem,
   NetworkSelectDropdownWrapper,
   GenericButton,
+  HeroTitle,
+  FormError,
+  StyledFormikForm,
+  RightNavWrapper,
+  UserWalletAddress,
 };
