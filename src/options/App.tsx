@@ -1,5 +1,5 @@
 import React from "react";
-import { MemoryRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import { AppWrapper } from "./components/styled";
 import { WalletCreatePage } from "./pages/Create";
