@@ -13,6 +13,7 @@ import {
 export default function CopyMnemonic() {
   const { setActiveStep } = useStepperContext();
   const mnemonic = useCreateModuleStore((state) => state.appState.mnemonic);
+
   const handleCopyClick = () => {
     //
     if (navigator.clipboard && mnemonic) {

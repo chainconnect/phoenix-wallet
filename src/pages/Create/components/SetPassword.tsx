@@ -29,6 +29,7 @@ export default function SetPassword() {
 
   const handleSubmit = (value: IFormikSetPassword) => {
     const { newAccount, privateBase58 } = getAccountAndPrivateKeyFromMnemonic(mnemonic);
+    console.log({ newAccount, privateBase58 });
     setAccount(newAccount);
     setKeyToVault(privateBase58);
     history.push('/dashboard');

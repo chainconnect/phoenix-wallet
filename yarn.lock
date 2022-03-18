@@ -395,6 +395,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@root/passphrase@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@root/passphrase/-/passphrase-1.1.0.tgz#505a240fffb4f5ee4d08bfbc8cd93791453c0370"
+  integrity sha512-uokMKGQ+wUiqHpvxWRZNj5QtSGvoLOfOND/ny7NZaV2+48mahzJPUbLE9y/xhf/536mi9UvwlnbgTyVqedVHUA==
+
 "@solana/buffer-layout@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@solana/buffer-layout/-/buffer-layout-3.0.0.tgz#b9353caeb9a1589cb77a1b145bcb1a9a93114326"

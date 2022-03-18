@@ -1,6 +1,5 @@
 import create from 'zustand';
 import produce from 'immer';
-import * as Bip39 from 'bip39';
 
 export interface ICreateModuleStore {
   appState: {
@@ -10,6 +9,7 @@ export interface ICreateModuleStore {
     setMnemonic: (phrase?: string) => void;
   };
 }
+
 export const useCreateModuleStore = create<ICreateModuleStore>((set, get) => ({
   appState: {
     mnemonic: null,
@@ -19,9 +19,7 @@ export const useCreateModuleStore = create<ICreateModuleStore>((set, get) => ({
       set(
         produce((state: ICreateModuleStore) => {
           if (!mnemonic) {
-            const generatedMnemonic = Bip39.generateMnemonic();
-            console.log({ generatedMnemonic });
-            state.appState.mnemonic = generatedMnemonic;
+            state.appState.mnemonic = '';
           } else {
             state.appState.mnemonic = mnemonic;
           }

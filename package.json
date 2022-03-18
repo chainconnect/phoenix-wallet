@@ -11,6 +11,7 @@
     "lint:quiet": "eslint src/* --quiet"
   },
   "dependencies": {
+    "@root/passphrase": "^1.1.0",
     "@solana/web3.js": "^1.36.0",
     "bip38": "^3.1.1",
     "bip39": "^3.0.4",

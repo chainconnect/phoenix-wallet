@@ -2,7 +2,7 @@ import React from 'react';
 import * as Bip39 from 'bip39';
 import * as bs58 from 'bs58';
 import { Keypair } from '@solana/web3.js';
-import { useGlobalStore } from '../utils/store';
+import { useGlobalStore, useVaultStore } from '../utils/store';
 import { decryptPrivateKey, encryptPrivateKey } from '../utils/walletHelpers';
 import { refreshBalance } from '../pages/Dashboard/utils/dashboardHelper';
 
@@ -12,6 +12,7 @@ export default function useWallet() {
     state.appState.selectedNetwork,
     state.actions.setAccount,
   ]);
+  const key = useVaultStore((state) => state.key);
   const [balance, setBalance] = React.useState(0);
 
   const storeAccountFromMnemonic = (mnemonic: string, password: string) => {
@@ -24,7 +25,7 @@ export default function useWallet() {
     localStorage.setItem('privateKey', privateBase58);
   };
   const getAccountFromStorage = () => {
-    const privateBase58 = localStorage.getItem('privateKey');
+    const privateBase58 = key;
     const privateBuffer = bs58.decode(privateBase58!);
     const newAccount = Keypair.fromSecretKey(privateBuffer);
     setAccount(newAccount);
