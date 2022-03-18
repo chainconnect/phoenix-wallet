@@ -1,0 +1,9 @@
+{
+  "name": "Phoenix",
+  "version": "0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Phoenix Wallet"
+  },
+  "options_page": "options/index.html"
+}

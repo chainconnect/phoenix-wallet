@@ -3,20 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "node ./scripts/dev.mjs",
+    "build": "node ./scripts/build.mjs",
+    "format": "prettier --write ./src/**/*.{js,jsx,ts,tsx,html}",
     "lint": "eslint src/*",
     "lint:fix": "eslint src/* --fix",
     "lint:quiet": "eslint src/* --quiet"
   },
   "dependencies": {
-    "@root/passphrase": "^1.1.0",
-    "@solana/web3.js": "^1.36.0",
-    "bip38": "^3.1.1",
-    "bip39": "^3.0.4",
-    "bs58": "^5.0.0",
-    "crypto-js": "^4.1.1",
     "formik": "^2.2.9",
     "framer-motion": "^6.2.8",
     "immer": "^9.0.12",
@@ -24,11 +18,17 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-router-dom": "5",
-    "react-simple-snackbar": "^1.1.11",
     "styled-components": "^5.3.3",
-    "wif": "^2.0.6",
     "yup": "^0.32.11",
-    "zustand": "^3.7.1"
+    "zustand": "^3.7.1",
+    "@root/passphrase": "^1.1.0",
+    "@solana/web3.js": "^1.36.0",
+    "bip38": "^3.1.1",
+    "bip39": "^3.0.4",
+    "bs58": "^5.0.0",
+    "crypto-js": "^4.1.1",
+    "react-simple-snackbar": "^1.1.11",
+    "wif": "^2.0.6"
   },
   "devDependencies": {
     "@types/bip38": "^2.0.1",
@@ -41,6 +41,8 @@
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "@vitejs/plugin-react": "^1.0.7",
+    "chokidar": "^3.5.3",
+    "esbuild": "^0.14.27",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -48,9 +50,16 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "fs-extra": "^10.0.1",
+    "path": "^0.12.7",
+    "prettier": "^2.6.0",
     "readable-stream": "^3.6.0",
     "rollup-plugin-polyfill-node": "^0.8.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
+  },
+  "prettier": {
+    "useTabs": true,
+    "tabWidth": 2
   }
 }
