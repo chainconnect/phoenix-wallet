@@ -14,18 +14,18 @@ const publicPath = path.resolve(__dirname, "../public");
 console.log(`--- BUILDING IN WATCH MODE ---`);
 
 chokidar.watch([srcPath, publicPath], {}).on("all", (_, triggerPath) => {
-  if (triggerPath.includes("public")) {
-    fse.copySync(publicPath, outPath, {
-      overwrite: true,
-    });
-  }
+	console.log("Rebuilding...", triggerPath);
 
-  esbuild
-    .build({
-      ...config,
-      entryPoints: {
-        popup: popupPath,
-      },
-    })
-    .catch(console.error);
+	fse.copySync(publicPath, outPath, {
+		overwrite: true,
+	});
+
+	esbuild
+		.build({
+			...config,
+			entryPoints: {
+				popup: popupPath,
+			},
+		})
+		.catch(console.error);
 });

@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import { useSnackbar } from "react-simple-snackbar";
 import { useGlobalStore } from "../utils/store";
 import NetworkSelect from "./NetworkSelect";

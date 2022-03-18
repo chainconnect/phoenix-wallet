@@ -1,10 +1,8 @@
-import React from "react";
-import * as Bip39 from "bip39";
-import * as bs58 from "bs58";
 import { Keypair } from "@solana/web3.js";
-import { useGlobalStore, useVaultStore } from "../utils/store";
-import { decryptPrivateKey, encryptPrivateKey } from "../utils/walletHelpers";
+import * as bs58 from "bs58";
+import React from "react";
 import { refreshBalance } from "../pages/Dashboard/utils/dashboardHelper";
+import { useGlobalStore, useVaultStore } from "../utils/store";
 
 export default function useWallet() {
 	const [account, currentNetwork, setAccount] = useGlobalStore((state) => [
@@ -24,6 +22,7 @@ export default function useWallet() {
 			"2NPms23canoV5ca8RUSJfnAtGC4TabAhx23SWtie7JU1pquQHWmFbsrKWUQMuHz7oUBwg4UeVzSGfUvxG2GvoARB";
 		localStorage.setItem("privateKey", privateBase58);
 	};
+
 	const getAccountFromStorage = () => {
 		const privateBase58 = key;
 		const privateBuffer = bs58.decode(privateBase58!);

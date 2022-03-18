@@ -43,14 +43,16 @@ export const useGlobalStore = create<GlobalStore>(
 		},
 	}))
 );
-export const useVaultStore = create<IVaultStore>(
-	persist(
-		(set, get) => ({
-			key: null,
-			setKey: (key: string) => set({ key }),
-		}),
-		{
-			name: "phoenix-vault", // unique name
-		}
-	)
-);
+
+export const useVaultStore = create<IVaultStore>((set, get) => ({
+	key: null,
+	setKey: (key: string) => set({ key }),
+}));
+
+useVaultStore.subscribe((state) => {
+	console.log("State updated", state.key);
+
+	chrome.storage.sync.set({
+		key: state.key,
+	});
+});
