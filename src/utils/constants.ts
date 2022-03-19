@@ -1,1 +1,1 @@
-export const networklist = ['mainnet-beta', 'testnet', 'devnet'];
+export const networklist = ["mainnet-beta", "testnet", "devnet"];

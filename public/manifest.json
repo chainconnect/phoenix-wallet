@@ -1,0 +1,28 @@
+{
+	"name": "Phoenix Wallet",
+	"description": "Learning all about Chrome Extensions Manifest Version 3!",
+	"version": "0.1.0",
+	"manifest_version": 3,
+	"icons": {
+		"16": "/images/16.png",
+		"32": "/images/32.png",
+		"48": "/images/48.png",
+		"128": "/images/128.png"
+	},
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "/images/16.png",
+			"32": "/images/32.png",
+			"48": "/images/48.png",
+			"128": "/images/128.png"
+		}
+	},
+	"options_page": "options.html",
+	"permissions": ["storage", "activeTab", "scripting", "tabs"],
+	"host_permissions": ["https://www.google.com/*"],
+	"content_security_policy": {
+		"extension_pages": "script-src 'self'; object-src 'self'",
+		"sandbox": "sandbox allow-scripts; script-src 'self' 'https://apis.google.com/' 'https://www.gstatic.com/' 'https://*.firebaseio.com' 'https://www.googleapis.com' 'https://ajax.googleapis.com'; object-src 'self'"
+	}
+}
